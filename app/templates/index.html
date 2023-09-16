@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% comment %} <link href="index.css" rel="stylesheet"> {% endcomment %}
+    <title>Myproject</title>
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> {% endcomment %}
+  </head>
+
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0 " >
+   
+   <div class="title">
+    <h1> Django Project</h1>
+   </div>
+ 
+
+    {% comment %} <div  class="mb-3" style="width: 400px ">
+        <form for="formname" class="form-label"  >Name</form>
+        <input type="name" class="form-control" id="formname" placeholder="enter your name">
+      </div>
+
+    <div class="mb-3"  style="width: 400px";>
+      <label for="formemailaddress" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="formemailaddress" placeholder="enter your email address">
+    </div>
+    
+      <div class="mb-3" style="width: 200px;">
+        <label for="forrollno" class="form-label">Roll no </label>
+        <input type="rollno" class="form-control" id="forrollno" placeholder="enter your roll number">
+      </div>
+
+    <div class="mb-3" style="width: 600px";>
+      <label for="forbio" class="form-label">BIO</label>
+      <textarea class="form-control" id="forbio" placeholder="Enter your bio here" rows="3"></textarea>
+    </div>
+     {% endcomment %}
+{% comment %} <div></div> {% endcomment %}
+
+<form method = "post">
+     {% csrf_token %}
+    Name : <input type= "text" name= "name" >
+    Email : <input type= "email" name= "email" >
+    Roll_no : <input type= "text" name= "Rollno" >
+    Bio : <input type= "text" name= "bio" >
+    <input type = "submit">
+</form>
+
+<br>
+{% for s in no_students %}
+   {%
+    <p>Name : {{s.name}}</p>
+    <p>Email : {{s.email}}</p>
+    <p>Roll_No :{{s.roll_no}}</p>
+    <p>BIO : {{s.bio}}</p>
+    <hr>
+    {% endfor %}
+  </body>
+</html>
